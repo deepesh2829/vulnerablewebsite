@@ -1,0 +1,49 @@
+<h2>Welcome, Manager</h2>
+
+<!-- Room Availability Section -->
+ 
+<h3>Room Availability</h3>
+<ul>
+    {% for room in rooms %}
+        <li>Room {{ room.id }} - 
+            <form action="{{ url_for('toggle_room_availability', room_id=room.id) }}" method="POST" style="display:inline;">
+                <button type="submit">{{ 'Available' if room.availability else 'Occupied' }}</button>
+            </form>
+        </li>
+    {% endfor %}
+</ul>
+
+<!-- Doctor Details Section -->
+<h3>Doctor Details</h3>
+<a href=>Doctor Details</a>
+<ul>
+    {% for doctor in doctors %}
+        <li>{{ doctor.name }} - {{ doctor.specialization }} 
+            <a href="{{ url_for('edit_doctor', doctor_id=doctor.id) }}">Edit</a>
+            <a href="{{ url_for('delete_doctor', doctor_id=doctor.id) }}">Delete</a>
+        </li>
+    {% endfor %}
+</ul>
+
+<!-- Patient Details Section -->
+<h3>Patient Details</h3>
+<ul>
+    {% for patient in patients %}
+        <li>{{ patient.name }} - Age: {{ patient.age }} 
+            <a href="{{ url_for('edit_patient', patient_id=patient.id) }}">Edit</a>
+            <a href="{{ url_for('delete_patient', patient_id=patient.id) }}">Delete</a>
+        </li>
+    {% endfor %}
+</ul>
+
+<!-- Medication Availability Section -->
+<h3>Available Medications</h3>
+<ul>
+    {% for med in medications %}
+        <li>{{ med.name }} - Quantity: {{ med.quantity }} 
+            <form action="{{ url_for('toggle_medication', med_id=med.id) }}" method="POST" style="display:inline;">
+                <button type="submit">{{ 'In Stock' if med.quantity > 0 else 'Out of Stock' }}</button>
+            </form>
+        </li>
+    {% endfor %}
+</ul>

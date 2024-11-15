@@ -1,0 +1,93 @@
+/* Reset some default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* General body styling */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+/* Container for the entire page content */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+}
+
+/* Header styles */
+header h1 {
+    font-size: 3rem;
+    color: #2c3e50;
+    margin-bottom: 50px;
+}
+
+/* Link buttons for roles */
+.links {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-bottom: 50px;
+}
+
+/* Base styling for role buttons */
+.role-btn {
+    display: inline-block;
+    padding: 15px 0px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 8px;
+    color: white;
+    text-align: center;
+    width: 150px;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Role-specific button colors */
+.doctor {
+    background-color: #1abc9c; /* Greenish */
+}
+
+.patient {
+    background-color: #3498db; /* Blue */
+}
+
+.management {
+    background-color: #f39c12; /* Yellow */
+}
+
+/* Hover effect for role buttons */
+.role-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Footer styling */
+footer {
+    margin-top: 30px;
+    font-size: 1rem;
+    color: #7f8c8d;
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2rem;
+    }
+
+    .links {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .role-btn {
+        width: 200px;
+        font-size: 1.1rem;
+    }
+}

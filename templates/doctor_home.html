@@ -1,0 +1,6 @@
+<h2>Welcome, Dr. {{ doctor_user.username }}</h2>
+<ul>
+    {% for appointment in appointments %}
+        <li>Appointment with {{ appointment.patient.name }} at {{ appointment.appointment_time }}</li>
+    {% endfor %}
+</ul>

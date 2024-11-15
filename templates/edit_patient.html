@@ -1,0 +1,18 @@
+<h2>Edit Patient Details</h2>
+<form method="POST">
+    <label for="name">Name:</label>
+    <input type="text" name="name" value="{{ patient.name }}" required><br>
+
+    <label for="age">Age:</label>
+    <input type="number" name="age" value="{{ patient.age }}" required><br>
+
+    <label for="sex">Sex:</label>
+    <input type="text" name="sex" value="{{ patient.sex }}" required><br>
+
+    <label for="medical_history">Medical History:</label>
+    <textarea name="medical_history">{{ patient.medical_history }}</textarea><br>
+
+    <button type="submit">Save Changes</button>
+</form>
+
+
